@@ -38,7 +38,8 @@ export function Login() {
                 </label>
                 <a href="#" className="text-indigo-600 hover:underline text-sm">Olvidaste tu contraseña?</a>
               </div>
-              <p className="text-center my-8 text-sm text-gray-600">Aun no tienes cuenta?</p>
+              <Link to="/register" className="block text-center my-8 text-sm font-semibold text-black"> Aun no tienes cuenta?
+              </Link>
               <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto">Iniciar Sesión</button>
             </form>
           </div>
