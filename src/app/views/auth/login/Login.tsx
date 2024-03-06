@@ -1,19 +1,42 @@
 import { AuthCard } from "../components/AuthCard";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../store/contexts/AuthContexts";
 import loginImg from '../../../assets/iniciars.png'; 
+import { AuthService } from "../../../services/AuthService";
 
 export function Login() {
   const { dispatchUser }: any = useContext(AuthContext);
 
-  const handleSubmit = () => {
+  const [formState, setFormState] = useState({
+    email: '',
+    password: '',
+  })
+
+  const handleSubmit =  async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    try{
+      const {email, password} =formState;
+      const loggedIn = await AuthService.login(email,password);
+      if (loggedIn){
+
+      }else{
+
+      }
+    }catch (error){
+      console.error('error en el incio de sesion', error);
+    }
 
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-
-  }
+    const {name,value}= e.target;
+    setFormState(prevState => ({
+      ...prevState,
+      [name]:value,
+    }))
+  };
 
   return (
     <AuthCard>

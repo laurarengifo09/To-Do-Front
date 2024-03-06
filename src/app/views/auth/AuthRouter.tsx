@@ -10,7 +10,6 @@ export function AuthRouter(){
             <Route path="/register" element={<Register/>} />
             <Route path="*" element={<Navigate to="/login" replace />} />
 
-
         </Routes>
     )
 }
