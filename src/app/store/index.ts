@@ -1,11 +1,11 @@
-import { AsyncThunkAction, EnhancedStore, configureStore } from "@reduxjs/toolkit";
+import { EnhancedStore, configureStore } from "@reduxjs/toolkit";
 import { makeReducer } from "./rootReducer";
 
-interface IStore extends EnhancedStore<AsyncThunkAction<any, any, any>>{
+interface IStore extends EnhancedStore{
   asyncReducers?: any;
 }
 
-const store: IStore = configureStore<AsyncThunkAction<any, any, any>>({
+const store: IStore = configureStore({
   reducer: makeReducer(),
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });

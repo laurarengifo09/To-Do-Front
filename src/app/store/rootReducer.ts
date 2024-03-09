@@ -4,7 +4,7 @@ import userSlice from "../views/auth/store/userSlice";
 export const makeReducer =
   (asyncReducers?: any) => (state: any, action: any) => {
     const combinedReducer = combineReducers({
-      userSlice,
+      user: userSlice,
       ...asyncReducers,
     });
 
