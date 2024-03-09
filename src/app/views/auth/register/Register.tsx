@@ -19,9 +19,11 @@ export function Register() {
     <AuthCard>
       <section className="min-h-screen flex items-center justify-center">
         <div className="max-w-4xl w-full mx-4 bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
-          <form className="w-full md:w-1/2 p-8 flex flex-col justify-center items-center md:items-start">
+          <form className="w-full md:w-1/2 p-8 flex-col justify-center items-center md:items-start">
+            <div className="  md:items-start">
             <h2 className="font-bold text-2xl mb-6">REGISTRATE</h2>
             <p className="mb-6">Crea una nueva cuenta, ahora!</p>
+            </div>
             <div className="space-y-6 w-full">
               <div>
                 <label className="block text-sm font-medium mb-2" htmlFor="fullname">Nombre Completo</label>
@@ -45,8 +47,8 @@ export function Register() {
                 </label>
               </div>
             </div>
-            <div className="mt-4">
-              <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto">Registrarse</button>
+            <div className="justify-center mt-4 items-center">
+              <button type="submit" className="bg-custom-primary hover:bg-blue-700 text-white justify-center font-bold py-2 px-4 rounded mx-auto flex w-full">Registrarse</button>
             </div>
           </form>
           <div className="hidden md:block w-full md:w-1/2 md:flex justify-end">
