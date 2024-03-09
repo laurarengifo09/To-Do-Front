@@ -5,7 +5,6 @@ export function AppRouter(){
     return(
         <Router>
             <AuthRouter></AuthRouter>
-
         </Router>
     )
 

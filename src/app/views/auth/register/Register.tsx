@@ -8,7 +8,7 @@ export function Register() {
   const { dispatchUser }: any = useContext(AuthContext);
 
   const handleSubmit = () => {
-
+    
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
