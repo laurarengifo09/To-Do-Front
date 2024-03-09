@@ -12,7 +12,7 @@ FUNCTIONAL REQUIREMENTS:
 
 -Remember Me Option: Offer an option for users to stay logged in by storing their session information securely. This feature enhances user convenience for future visits to the platform.
 
--Forgot Password: Include a link for users to reset their passwords in case they forget them.
+-Forgot Password: After selecting the link to reset their passwords, users will be directed to a page where they can enter information to change their password.
 
 NON-FUNCTIONAL REQUIREMENTS:
 
@@ -27,3 +27,8 @@ NON-FUNCTIONAL REQUIREMENTS:
 -Scalability: Design the login system to scale efficiently, accommodating an increasing number of users and database entries without compromising performance.
 
 -User-Friendly Navigation: Ensure that the login process is intuitive and easy to navigate for users.
+
+
+
+LINK TO C4 DIAGRAMS: https://docs.google.com/document/d/1_zPdON6LEy7Y2ha87EoTERTrSS7pTsH-B9RSo7N0Xq4/edit?usp=sharing
+
