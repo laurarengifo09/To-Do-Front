@@ -59,11 +59,11 @@ export function Login() {
                   <input type="checkbox" className="form-checkbox" />
                   <span className="ml-2">Recordarme</span>
                 </label>
-                <a href="#" className="text-indigo-600 hover:underline text-sm">Olvidaste tu contraseña?</a>
+                <Link to="/recoverPassword" className="text-indigo-600 hover:underline text-sm">Olvidaste tu contraseña?</Link>
               </div>
               <Link to="/register" className="block text-center my-8 text-sm font-semibold text-black"> Aun no tienes cuenta?
               </Link>
-              <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto">Iniciar Sesión</button>
+              <button type="submit" className="bg-custom-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto">Iniciar Sesión</button>
             </form>
           </div>
           <div className="hidden md:block w-full md:w-1/2 md:flex justify-end">
