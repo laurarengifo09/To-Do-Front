@@ -19,7 +19,7 @@ export function Register() {
     <AuthCard>
       <section className="min-h-screen flex items-center justify-center">
         <div className="max-w-4xl w-full mx-4 bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
-          <form className="w-full md:w-1/2 p-8 flex-col justify-center items-center ">
+          <form className="w-full md:w-1/2 p-8 flex-col justify-center items-center md:items-start">
             <div className="  md:items-start">
             <h2 className="font-bold text-2xl mb-6">REGISTRATE</h2>
             <p className="mb-6">Crea una nueva cuenta, ahora!</p>
