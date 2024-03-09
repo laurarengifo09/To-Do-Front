@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+AUTHENTICATION SYSTEM:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FUNCTIONAL REQUIREMENTS:
 
-Currently, two official plugins are available:
+-User Credentials Input Fields: The login screen should include fields where users can enter their email address, along with a field for inputting their password.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-User Authentication: Verify that the combination of  email and password is valid.
 
-## Expanding the ESLint configuration
+-Sign Up option: Upon selecting "Sign Up", users should be directed to a registration form to input their details.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-Feedback Messages: Provide informative feedback messages when users interact with the login and sign-up labels, confirming actions or alerting users to errors or incomplete form entries.
 
-- Configure the top-level `parserOptions` property like this:
+-Remember Me Option: Offer an option for users to stay logged in by storing their session information securely. This feature enhances user convenience for future visits to the platform.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-Forgot Password: Include a link for users to reset their passwords in case they forget them.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+NON-FUNCTIONAL REQUIREMENTS:
+
+-Authentication Using Database: The login process should authenticate user credentials against a database where user information is securely stored.
+
+-Efficiency: The login and sign-up processes must exhibit swift responsiveness, maintaining optimal performance even during periods of high demand.
+
+-Usability: The user interface should be intuitive and user-friendly, allowing users to accomplish tasks efficiently and with minimal training or assistance.
+
+-Reliability: The login system should be reliable, ensuring users can access their accounts without encountering frequent downtime or errors.
+
+-Scalability: Design the login system to scale efficiently, accommodating an increasing number of users and database entries without compromising performance.
+
+-User-Friendly Navigation: Ensure that the login process is intuitive and easy to navigate for users.
