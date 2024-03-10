@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { login } from "./thunks/login.thunk";
 import { register } from "./thunks/register.thunk";
+import { RootState } from "../../../store";
 
 export type User = {
   id: string;
@@ -54,3 +55,5 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+
+export const selectLoading = ({ user }: RootState) => user.loading;
