@@ -16,6 +16,7 @@ export const services = {
     endpoints: {
       login: "login",
       register: "register",
+      recoverPassword: "recover-password",
     },
   },
 };

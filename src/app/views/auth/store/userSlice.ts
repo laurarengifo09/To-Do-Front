@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { login } from "./thunks/login.thunk";
 import { register } from "./thunks/register.thunk";
 import { RootState } from "../../../store";
+import { recoverPassword } from "./thunks/recoverPassword.thunk";
 
 export type User = {
   id: string;
@@ -49,6 +50,15 @@ const userSlice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload;
         state.loggedIn = true;
+        state.loading = false;
+      })
+      .addCase(recoverPassword.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(recoverPassword.rejected, (state) => {
+        state.loading = false;
+      })
+      .addCase(recoverPassword.fulfilled, (state) => {
         state.loading = false;
       });
   },
