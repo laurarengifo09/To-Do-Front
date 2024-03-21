@@ -6,10 +6,8 @@ import { NavBar } from "../../components/NavBar";
 export function Home() {
 
     return (
-        <div className="grid grid-cols-6 min-h-screen bg-white ">
+        <div className="grid grid-cols-6 min-h-screen bg-slate-50 ">
             <NavBar />  
         </div>
-
         );
-
 }
