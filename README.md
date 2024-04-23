@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+DEPLOY:
+https://to-do-front-fbdq.onrender.com/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AUTHENTICATION SYSTEM:
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+FUNCTIONAL REQUIREMENTS:
 
-## Expanding the ESLint configuration
+-User Credentials Input Fields: The login screen should include fields where users can enter their email address, along with a field for inputting their password.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-User Authentication: Verify that the combination of  email and password is valid.
 
-- Configure the top-level `parserOptions` property like this:
+-Sign Up option: Upon selecting "Sign Up", users should be directed to a registration form to input their details.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-Feedback Messages: Provide informative feedback messages when users interact with the login and sign-up labels, confirming actions or alerting users to errors or incomplete form entries.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+-Remember Me Option: Offer an option for users to stay logged in by storing their session information securely. This feature enhances user convenience for future visits to the platform.
+
+-Forgot Password: After selecting the link to reset their passwords, users will be directed to a page where they can enter information to change their password.
+
+NON-FUNCTIONAL REQUIREMENTS:
+
+-Authentication Using Database: The login process should authenticate user credentials against a database where user information is securely stored.
+
+-Efficiency: The login and sign-up processes must exhibit swift responsiveness, maintaining optimal performance even during periods of high demand.
+
+-Usability: The user interface should be intuitive and user-friendly, allowing users to accomplish tasks efficiently and with minimal training or assistance.
+
+-Reliability: The login system should be reliable, ensuring users can access their accounts without encountering frequent downtime or errors.
+
+-Scalability: Design the login system to scale efficiently, accommodating an increasing number of users and database entries without compromising performance.
+
+-User-Friendly Navigation: Ensure that the login process is intuitive and easy to navigate for users.
+
+
+
+LINK TO C4 DIAGRAMS: https://docs.google.com/document/d/1_zPdON6LEy7Y2ha87EoTERTrSS7pTsH-B9RSo7N0Xq4/edit?usp=sharing
+
