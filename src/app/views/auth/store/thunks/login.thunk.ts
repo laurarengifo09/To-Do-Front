@@ -16,10 +16,12 @@ type Response = {
 export const login = createAsyncThunk<User, Payload>(
   "user/login",
   async (payload: Payload) => {
+    localStorage.removeItem("token");
     const response: AxiosResponse<Response> = await api.post(
       `/${services.auth.prefix}/${services.auth.endpoints.login}`,
       payload
     );
+    console.log(response)
     localStorage.setItem("token", response.data.accessToken);
     return response.data.user;
   }

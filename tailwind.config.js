@@ -5,7 +5,13 @@ export default {
     extend: {
       colors: {
         custom: {
-          primary: "#4F46E5",
+          primary: {
+            500: "#546FFF"
+          },
+          secondary: {
+            300: "#8E92BC",
+            400: "#54577A"
+          }
         },
       },
     },
