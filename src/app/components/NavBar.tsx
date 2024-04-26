@@ -15,7 +15,7 @@ export const NavBar = () => {
           <FaBookOpen style={{ color: "white" }} size={30} />
         </div>
         <div>
-          <p className=' text-3xl "'>Nuegas</p>
+          <p className=" text-3xl">Nuegas</p>
         </div>
       </div>
       <div className=" flex flex-col ">
@@ -42,7 +42,7 @@ export const NavBar = () => {
               size={30}
               className=" ml-5"
             />
-            <p className="">Messegs</p>
+            <p className="">Messages</p>
           </div>
           <div className=" flex items-center  gap-2 mx-10 rounded-lg  hover:bg-slate-100  ">
             <RiSettings4Line
