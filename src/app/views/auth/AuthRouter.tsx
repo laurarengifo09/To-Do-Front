@@ -8,6 +8,7 @@ import { Home } from "../home/Home"
 export function AuthRouter(){
     return(
         <Routes>
+            <Route path="/home" element={<Home/>} />
             <Route path="/login" element={< Login/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/recoverPassword" element={<RecoverPassword/>} />
