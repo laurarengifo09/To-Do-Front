@@ -12,6 +12,7 @@ export function AuthRouter(){
             <Route path="/login" element={< Login/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/recoverPassword" element={<RecoverPassword/>} />
+            <Route path="/home" element={<Home/>} />
             <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
     )

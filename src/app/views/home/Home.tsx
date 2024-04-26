@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import { AuthCard } from "../auth/components/AuthCard";
-import { NavBar } from "../../components/NavBar";
+import { Navbar } from "./components/Navbar";
+import { Sidebar } from "./components/Sidebar";
 
 export function Home() {
-
     return (
-        <div className="grid grid-cols-6 min-h-screen bg-slate-50 ">
-            <NavBar />  
+      <div className="flex flex-col h-screen">
+        <Navbar />
+        <div className="flex flex-grow">
+          <Sidebar />
         </div>
-        );
-}
+      </div>
+    );
+  }
