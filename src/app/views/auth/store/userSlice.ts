@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { login } from "./thunks/login.thunk";
 import { register } from "./thunks/register.thunk";
 import { RootState } from "../../../store";
+import { loginWithJwt } from "./thunks/login-with-jwt.thunk";
 
 export type User = {
   id: string;
@@ -26,7 +27,13 @@ const initialState: State = {
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem("token");
+      state.user = undefined;
+      state.loggedIn = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(login.pending, (state) => {
@@ -39,6 +46,10 @@ const userSlice = createSlice({
         state.user = action.payload;
         state.loggedIn = true;
         state.loading = false;
+      })
+      .addCase(loginWithJwt.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.loggedIn = true;
       })
       .addCase(register.pending, (state) => {
         state.loading = true;
@@ -56,4 +67,8 @@ const userSlice = createSlice({
 
 export default userSlice.reducer;
 
+export const { logout } = userSlice.actions;
+
 export const selectLoading = ({ user }: RootState) => user.loading;
+export const selectLoggedIn = ({ user }: RootState) => user.loggedIn;
+export const selectUser = ({ user }: RootState) => user.user;
