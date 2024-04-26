@@ -5,6 +5,8 @@ import loginImg from "../../../assets/iniciars.png";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { login } from "../store/thunks/login.thunk";
 import { selectLoading } from "../store/userSlice";
+import { useEffect } from "react";
+import { loginWithJwt } from "../store/thunks/login-with-jwt.thunk";
 
 export function Login() {
   const dispatch = useAppDispatch();
@@ -13,6 +15,13 @@ export function Login() {
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      //@ts-ignore
+      dispatch(loginWithJwt());
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
