@@ -11,18 +11,18 @@ import { toast } from "react-toastify";
 import { Task } from "../types";
 import { toggleSoftDelete } from "../store/thunks/update-task.thunk";
 import { deleteTask } from "../store/thunks/delete-task.thunk";
+import { useSelector } from "react-redux";
 
 function RecycleBin() {
   const dispatch = useAppDispatch();
-  const tasks = useAppSelector(selectTasks);
-  const loading = useAppSelector(selectLoading);
+  const tasks = useSelector(selectTasks);
+  const loading = useSelector(selectLoading);
   const user = useAppSelector(selectUser);
 
   const getTasksByUserId = () => {
     dispatch(
-      // @ts-ignore
       getTasks({
-        userId: user.id,
+        userId: user?.id as string,
         filters: {
           done: false,
           deleted: true,
@@ -35,14 +35,12 @@ function RecycleBin() {
   };
 
   const recoverTask = async (task: Task) => {
-    // @ts-ignore
-    await dispatch(toggleSoftDelete({ task, userId: user.id })).unwrap();
+    await dispatch(toggleSoftDelete({ task, userId: user?.id as string })).unwrap();
     toast.success("Task recovered successfully!");
     getTasksByUserId();
   };
 
   const hardDeleteTask = async (task: Task) => {
-    // @ts-ignore
     await dispatch(deleteTask(task.id)).unwrap();
     toast.success("Task deleted successfully!");
     getTasksByUserId();

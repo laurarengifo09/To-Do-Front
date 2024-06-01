@@ -48,24 +48,26 @@ export function Login() {
             </div>
             <form className="space-y-6 w-full" onSubmit={handleSubmit}>
               <div className="mb-3 w-full">
-                <label className="block text-sm font-medium mb-1">Email</label>
+                <label className="block text-sm font-medium mb-1" htmlFor="email">Email</label>
                 <input
                   className="mt-1 w-full p-2 border rounded-lg"
                   type="email"
                   name="email"
+                  id="email"
                   placeholder="ejemplo@uao.edu.co"
                   onChange={handleChange}
                   required
                 />
               </div>
               <div className="mb-3 w-full">
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-1" htmlFor="password">
                   Contraseña
                 </label>
                 <input
                   className="mt-1 w-full p-2 border rounded-lg"
                   type="password"
                   name="password"
+                  id="password"
                   placeholder="ingresa tu contraseña"
                   onChange={handleChange}
                   required
@@ -93,7 +95,7 @@ export function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`bg-custom-primary hover:bg-blue-700 text-white justify-center font-bold py-2 px-4 rounded mx-auto flex w-full disabled:bg-slate-600`}
+                className={`bg-custom-primary-500 hover:bg-blue-700 text-white justify-center font-bold py-2 px-4 rounded mx-auto flex w-full disabled:bg-slate-600`}
               >
                 Iniciar Sesión
               </button>
