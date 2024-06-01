@@ -1,22 +1,8 @@
 import { Link } from "react-router-dom";
 import { AuthCard } from "../components/AuthCard";
 import Recover from "../../../assets/Recover.png";
-import { useState } from "react";
-import { recoverPassword } from "../store/thunks/recoverPassword.thunk";
-import { useAppDispatch } from "../../../store/hooks";
 
 export function RecoverPassword() {
-  const dispatch = useAppDispatch();
-
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    //@ts-ignore
-    dispatch(recoverPassword({email}))
-  };
-
-
   return (
     <AuthCard>
       <section className="min-h-screen flex items-center justify-center">
@@ -33,7 +19,6 @@ export function RecoverPassword() {
                 type="email"
                 id="email"
                 placeholder="elpepe@gmail.com"
-                onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
             <div className="justify-center mt-4 items-center">
