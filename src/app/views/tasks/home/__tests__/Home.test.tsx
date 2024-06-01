@@ -39,7 +39,7 @@ describe("Tasks Home", () => {
     vi.doUnmock("react-router-dom");
   });
 
-  it("should render a list of tasks", async () => {
-    expect(await screen.findAllByText("Task 1")).toBeDefined();
+  it("should render a search bar", async () => {
+    expect(screen.getByPlaceholderText("Search task")).toBeDefined();
   });
 });

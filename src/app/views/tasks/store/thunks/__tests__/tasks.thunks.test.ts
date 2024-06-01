@@ -1,4 +1,4 @@
-import { beforeAll, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it, vi } from "vitest";
 import store from "../../../../../store";
 import { login } from "../../../../auth/store/thunks/login.thunk";
 import { Priority } from "../../../types";
@@ -11,6 +11,7 @@ describe("Tasks Thunks", () => {
   });
   
   it("should create a task", async () => {
+    await vi.waitFor(() => (store.getState().user.user?.id));
     expect(store.getState().user.user?.id).toBeDefined();
     const task = await store.dispatch(
       createTask({

@@ -6,5 +6,9 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: "jsdom",
-  }
+    coverage: {
+      reporter: ["text", "lcov"],
+      reportsDirectory: "./coverage",
+    },
+  },
 } as UserConfigExport & InlineConfig);
