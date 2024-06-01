@@ -4,10 +4,9 @@ import { makeReducer } from "./rootReducer";
 import { ComponentType } from "react";
 
 const injectReducer = (key: string, reducer: Reducer) => {
-  if (store.asyncReducers[key]) return false;
+  if ((store.getState() as Object).hasOwnProperty(key)) return false;
 
-  store.asyncReducers[key] = reducer;
-  store.replaceReducer(makeReducer(store.asyncReducers));
+  store.replaceReducer(makeReducer({ [key]: reducer }));
 
   return store;
 };
