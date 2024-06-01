@@ -1,14 +1,27 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
-const token = localStorage.getItem("token");
+const initApi = (api: AxiosInstance) => {
+  api.interceptors.request.use(
+    (config) => {
+      if (!localStorage.getItem("token")) return config;
+      config.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
+  return api;
+};
 
-export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL as string,
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: token ? `Bearer ${localStorage.getItem("token")}` : "",
-  },
-});
+export const api = initApi(
+  axios.create({
+    baseURL: import.meta.env.VITE_API_BASE_URL as string,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+);
 
 export const services = {
   auth: {
@@ -16,7 +29,21 @@ export const services = {
     endpoints: {
       login: "login",
       register: "register",
-      recoverPassword: "recover-password",
+      jwt: "me",
     },
   },
+  tasks: {
+    prefix: "api/task",
+    endpoints: {
+      getByUserId: "getByUserId",
+      update: "",
+      delete: "",
+    },
+  },
+  users: {
+    prefix: "api/users",
+    endpoints: {
+      me: "me",
+    },
+  }
 };
