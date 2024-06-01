@@ -1,16 +1,11 @@
-import { EnhancedStore, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import { thunk } from "redux-thunk";
 import { makeReducer } from "./rootReducer";
 
-interface IStore extends EnhancedStore{
-  asyncReducers?: any;
-}
-
-const store: IStore = configureStore({
+const store = configureStore({
   reducer: makeReducer(),
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
-
-store.asyncReducers = {};
 
 export default store;
 export type AppDispatch = typeof store.dispatch;

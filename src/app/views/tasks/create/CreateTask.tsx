@@ -21,7 +21,7 @@ function CreateTask() {
     description: "",
     dueDate: moment().format("YYYY-MM-DD"),
     priority: Priority.Low,
-    userId: user?.id,
+    userId: user?.id as string,
   });
 
   const submitTask = async () => {

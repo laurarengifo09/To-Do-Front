@@ -1,8 +1,8 @@
-import { combineReducers } from "@reduxjs/toolkit";
+import { combineReducers, Reducer } from "@reduxjs/toolkit";
 import userSlice from "../views/auth/store/userSlice";
 
 export const makeReducer =
-  (asyncReducers?: any) => (state: any, action: any) => {
+  (asyncReducers?: { [key: string]: Reducer }) => (state: any, action: any) => {
     const combinedReducer = combineReducers({
       user: userSlice,
       ...asyncReducers,

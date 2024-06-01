@@ -9,18 +9,19 @@ import { MdDeleteOutline, MdOutlineCancel } from "react-icons/md";
 import { CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import { selectUser } from "../../auth/store/userSlice";
-import { getTasks } from '../store/thunks/get-tasks.thunk';
+import { getTasks } from "../store/thunks/get-tasks.thunk";
 import { Task } from "../types";
 import {
   toggleDone,
   toggleSoftDelete,
 } from "../store/thunks/update-task.thunk";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 function Home() {
   const dispatch = useAppDispatch();
-  const tasks = useAppSelector(selectTasks);
-  const loading = useAppSelector(selectLoading);
+  const tasks = useSelector(selectTasks);
+  const loading = useSelector(selectLoading);
   const user = useAppSelector(selectUser);
   const navigate = useNavigate();
 
@@ -48,9 +49,8 @@ function Home() {
 
   const getTasksByUserId = () => {
     dispatch(
-      // @ts-ignore
       getTasks({
-        userId: user.id,
+        userId: user?.id as string,
         filters: {
           sorting: sortStrategy,
           done: false,
@@ -60,18 +60,18 @@ function Home() {
         },
       })
     );
-  }
+  };
 
   const toggleTaskDone = async (task: Task) => {
-    // @ts-ignore
-    await dispatch(toggleDone({ task, userId: user.id })).unwrap();
+    await dispatch(toggleDone({ task, userId: user?.id as string })).unwrap();
     toast.success("Task marked as done");
     getTasksByUserId();
   };
 
   const softDeleteTask = async (task: Task) => {
-    // @ts-ignore
-    await dispatch(toggleSoftDelete({ task, userId: user.id })).unwrap();
+    await dispatch(
+      toggleSoftDelete({ task, userId: user?.id as string })
+    ).unwrap();
     toast.success("Task deleted");
     getTasksByUserId();
   };
